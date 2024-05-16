@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBC - Just Basic Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .main-title {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-bottom: 1em;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .section {
+            background: #fff;
+            padding: 2em;
+            margin: 1em 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .contact-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: #fff;
+            padding: 1em 2em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .product {
+            flex: 1 1 calc(25% - 1em);
+            background: #fff;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        select {
+            margin-top: 1em;
+            padding: 0.5em;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JBC - Just Basic Color</h1>
+    </header>
+    <div class="main-title">
+        <h1>Bienvenidos a JBC - Just Basic Color</h1>
+    </div>
+    <div class="container">
+        <section class="section">
+            <h2>Contacto</h2>
+            <p>Para cualquier consulta o pedido, contactanos directamente a traves de WhatsApp haciendo clic en el boton a continuacion:</p>
+            <a href="https://wa.me/8136316799" class="contact-button">Contactar por WhatsApp</a>
+        </section>
+        <section class="section">
+            <h2>Nuestros Productos</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img id="camiseta_ch_img" src="images/camiseta_ch_blanca.jpg" alt="Camiseta CH">
+                    <h3>Camiseta Talla CH</h3>
+                    <select onchange="cambiarColor('camiseta_ch_img', this.value)">
+                        <option value="blanca">Blanco</option>
+                        <option value="negra">Negro</option>
+                        <option value="verde">Verde</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                <div class="product">
+                    <img id="camiseta_m_img" src="images/camiseta_m_blanca.jpg" alt="Camiseta M">
+                    <h3>Camiseta Talla M</h3>
+                    <select onchange="cambiarColor('camiseta_m_img', this.value)">
+                        <option value="blanca">Blanco</option>
+                        <option value="negra">Negro</option>
+                        <option value="verde">Verde</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                <div class="product">
+                    <img id="camiseta_g_img" src="images/camiseta_g_blanca.jpg" alt="Camiseta G">
+                    <h3>Camiseta Talla G</h3>
+                    <select onchange="cambiarColor('camiseta_g_img', this.value)">
+                        <option value="blanca">Blanco</option>
+                        <option value="negra">Negro</option>
+                        <option value="verde">Verde</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                <div class="product">
+                    <img id="camiseta_xg_img" src="images/camiseta_xg_blanca.jpg" alt="Camiseta XG">
+                    <h3>Camiseta Talla XG</h3>
+                    <select onchange="cambiarColor('camiseta_xg_img', this.value)">
+                        <option value="blanca">Blanco</option>
+                        <option value="negra">Negro</option>
+                        <option value="verde">Verde</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function cambiarColor(id, color) {
+            var imagen = document.getElementById(id);
+            var talla = id.split('_')[1];
+            if (color === 'otros') {
+                imagen.src = "images/camiseta_" + talla + "_otros.jpg";
+            } else {
+                imagen.src = "images/camiseta_" + talla + "_" + color + ".jpg";
+            }
+        }
+    </script>
+</body>
+</html>
